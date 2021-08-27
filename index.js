@@ -21,7 +21,7 @@ mongoose.set("useUnifiedTopology", true);
 
 mongoose
   .connect(
-    `mongodb+srv://user1:hFqOTeCdkbAavbYM@cluster0.ku5rn.mongodb.net/Blog?retryWrites=true&w=majority`
+    `mongodb+srv://Anton:BDznrPXXNZlULJJf@cluster0.ku5rn.mongodb.net/Blog?retryWrites=true&w=majority`
   )
   .then(console.log("Connected to MongoDB"))
   .catch((err) => console.log(err));
