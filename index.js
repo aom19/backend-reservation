@@ -13,13 +13,16 @@ dotenv.config();
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
 
+mongoose.set("useNewUrlParser", true);
+mongoose.set("useFindAndModify", false);
+mongoose.set("useCreateIndex", true);
+mongoose.set("useUnifiedTopology", true);
+
+
 mongoose
-  .connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify:true
-  })
+  .connect(
+    `mongodb+srv://user1:hFqOTeCdkbAavbYM@cluster0.ku5rn.mongodb.net/Blog?retryWrites=true&w=majority`
+  )
   .then(console.log("Connected to MongoDB"))
   .catch((err) => console.log(err));
 
